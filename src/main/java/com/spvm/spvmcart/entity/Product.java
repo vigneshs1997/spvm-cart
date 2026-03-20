@@ -48,10 +48,20 @@ public class Product {
     @JoinColumn(name = "product_id")
     private List<ProductReview> reviews;//The product has multiple reviews
 
+    /*
+     CascadeType.ALL
+     ===============
+     Save parent - Saves children
+     Update parent - Updates children
+     Delete parent - Deletes children
+
+     orphanRemoval = true
+     ====================
+     Remove child from list - Deletes that child
+    */
     public Product(Long id, String name, Double price,
                    String description, Double ratings,
-                   String seller, Integer stock,
-                   Integer numOfReviews) {
+                   String seller, Integer stock) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -59,8 +69,11 @@ public class Product {
         this.ratings = ratings;
         this.seller = seller;
         this.stock = stock;
-        this.numOfReviews = numOfReviews;
     }
+    public Product(){//default constructor for entity
+
+    }
+
 
     public Long getId() {
         return id;
