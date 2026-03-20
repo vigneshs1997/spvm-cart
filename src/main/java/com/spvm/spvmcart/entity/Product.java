@@ -50,8 +50,7 @@ public class Product {
 
     public Product(Long id, String name, Double price,
                    String description, Double ratings,
-                   String seller, Integer stock,
-                   Integer numOfReviews) {
+                   String seller, Integer stock) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -59,9 +58,11 @@ public class Product {
         this.ratings = ratings;
         this.seller = seller;
         this.stock = stock;
-        this.numOfReviews = numOfReviews;
+        //this.numOfReviews = numOfReviews;
     }
+    public Product(){//default constructor
 
+    }
     public Long getId() {
         return id;
     }
