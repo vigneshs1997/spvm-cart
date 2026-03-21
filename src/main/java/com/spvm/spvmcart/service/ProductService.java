@@ -24,4 +24,7 @@ public class ProductService {
         response.put("totalProducts",products.getTotalElements());//getTotalElements() return total product count EX:10
         return response;
     }
+    public Product getProductById(Long id){
+        return productRepo.findById(id).orElseThrow(()-> new RuntimeException("Product not found with the id of "+id));//Optional (or) orElseThrow();
+    }
 }

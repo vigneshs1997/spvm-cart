@@ -26,6 +26,8 @@ public class Product {
 
     private String description;
 
+    private String category;
+
     private Double ratings = 0.0; //YES
 
     @NotBlank(message = "Seller field is required") //NO
@@ -49,12 +51,13 @@ public class Product {
     private List<ProductReview> reviews;//The product has multiple reviews
 
     public Product(Long id, String name, Double price,
-                   String description, Double ratings,
+                   String description,String category, Double ratings,
                    String seller, Integer stock) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.description = description;
+        this.category = category;
         this.ratings = ratings;
         this.seller = seller;
         this.stock = stock;
@@ -126,4 +129,8 @@ public class Product {
     public void setNumOfReviews(Integer numOfReviews) {
         this.numOfReviews = numOfReviews;
     }
+
+    public String getCategory() { return category; }
+
+    public void setCategory(String category) { this.category = category; }
 }
