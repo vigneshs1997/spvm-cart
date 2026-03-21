@@ -30,4 +30,13 @@ public class ProductController {
     public Product getProductById(@PathVariable Long id){
        return productService.getProductById(id);
     }
+
+    @GetMapping("/search")
+    public List<Product> searchProducts(@RequestParam(required = false) String category,
+                                        @RequestParam(required = false) Double minPrice,//Wrapper class accepts null value
+                                        @RequestParam(required = false) Double maxPrice,//Wrapper class accepts null value
+                                        @RequestParam(required = false) String keyword,
+                                        @RequestParam(required = false) Double ratings){
+        return productService.searchProducts(category, minPrice, maxPrice, keyword, ratings);
+    }
 }
